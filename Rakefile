@@ -10,7 +10,7 @@ end
 task :update do
   senate = VoteTracker::Senate.new
 
-  senate.votes.each do |vote|
+  senate.votes.reverse.each do |vote|
     VoteTracker::Twitter.instance.tweet(vote)
   end
 end
