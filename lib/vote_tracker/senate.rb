@@ -24,7 +24,7 @@ module VoteTracker
     def parsed_type(node)
       match = node.css('question').text.match(/the (\w+)(\z|\s\w+)/)
 
-      if match[2].length > 2
+      if match[2].length > 3
         match[1] + match[2]
       else
         match[1]

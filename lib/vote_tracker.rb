@@ -1,4 +1,5 @@
 require 'vote_tracker/senate'
+require 'vote_tracker/twitter'
 require 'vote_tracker/version'
 require 'vote_tracker/vote'
 
