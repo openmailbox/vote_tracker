@@ -8,11 +8,15 @@ task :console do
 end
 
 task :update do
-  senate = VoteTracker::Senate.new
+  count   = 0
+  senate  = VoteTracker::Senate.new
+  twitter = VoteTracker::Twitter.instance
 
   senate.votes.reverse.each do |vote|
-    VoteTracker::Twitter.instance.tweet(vote)
+    count += 1 if twitter.tweet!(vote)
   end
+
+  puts "Tweeted #{count} times."
 end
 
 task default: :console

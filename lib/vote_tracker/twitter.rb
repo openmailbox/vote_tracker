@@ -15,11 +15,13 @@ module VoteTracker
       end
     end
 
-    def tweet(vote)
-      return if already_tweeted?(vote)
+    def tweet!(vote)
+      return false if already_tweeted?(vote)
 
       client.update(vote.to_tweet)
       record_tweet!(vote)
+
+      true
     end
 
     private
