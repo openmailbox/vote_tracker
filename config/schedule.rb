@@ -18,3 +18,9 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+set :output, File.expand_path('../../log/cron.log', __FILE__)
+
+every 1.hours do
+  rake 'update'
+end
