@@ -19,6 +19,8 @@
 
 # Learn more: http://github.com/javan/whenever
 
+env :PATH, ENV['PATH']
+
 set :output, File.expand_path('../../log/cron.log', __FILE__)
 
 every 1.hours do

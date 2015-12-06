@@ -8,10 +8,10 @@ module VoteTracker
 
     def client
       @client ||= ::Twitter::REST::Client.new do |config|
-        config.consumer_key        = '***REMOVED***'
-        config.consumer_secret     = '***REMOVED***'
-        config.access_token        = '***REMOVED***'
-        config.access_token_secret = '***REMOVED***'
+        config.consumer_key        = 'v4O599qC2ROPZ9XyeDgZxUCpJ'
+        config.consumer_secret     = 'vpp4ioCTrQDuL9qo9PQWxWZzkwxRivcmMTwPh4zZuvO0jzcGvS'
+        config.access_token        = '4389538889-i4k2lhFtjPKW8wyMtKwmOWaJClR4BAXPzAiJ4JR'
+        config.access_token_secret = 'welz5AEkB6eNSJgbQ2Z7HhmjXUhLJgUJGga2qQOtdDy2t'
       end
     end
 
