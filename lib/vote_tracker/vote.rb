@@ -19,7 +19,7 @@ module VoteTracker
     end
 
     def to_s
-      "Senate #{action} #{article} #{type} for #{issue}: #{summary}"
+      "#Senate #{action} #{article} #{type} for #{issue}: #{summary}"
     end
 
     def to_tweet
