@@ -21,7 +21,7 @@
 
 env :PATH, ENV['PATH']
 
-set :output, File.expand_path('../../log/cron.log', __FILE__)
+set :output, File.expand_path('../../log/vote_tracker.log', __FILE__)
 set :environment_variable, 'VOTE_TRACKER_ENV'
 
 every 1.hours do

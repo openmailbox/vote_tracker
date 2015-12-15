@@ -20,4 +20,8 @@ module VoteTracker
   def self.configure
     yield configuration
   end
+
+  def self.logger
+    configuration.logger
+  end
 end

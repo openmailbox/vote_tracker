@@ -16,7 +16,7 @@ task :update do
     count += 1 if twitter.tweet!(vote)
   end
 
-  puts "Tweeted #{count} times."
+  VoteTracker.logger.info("Tweeted #{count} times.")
 end
 
 task default: :console

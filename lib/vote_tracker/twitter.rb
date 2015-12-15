@@ -18,7 +18,12 @@ module VoteTracker
     def tweet!(vote)
       return false if already_tweeted?(vote)
 
-      client.update(vote.to_tweet) if VoteTracker.env == 'production'
+      if VoteTracker.env == 'production'
+        client.update(vote.to_tweet)
+      else
+        VoteTracker.logger.info("Skipping Twitter update in #{VoteTracker.env} environment.")
+      end
+
       record_tweet!(vote)
 
       true
@@ -26,6 +31,7 @@ module VoteTracker
 
     private
 
+    # TODO: Horrible state tracking.  Make something better.
     def already_tweeted?(vote)
       last_congress, last_number = File.read(DATA_PATH).chomp.split('-')
 
