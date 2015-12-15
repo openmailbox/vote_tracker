@@ -18,7 +18,7 @@ module VoteTracker
     def tweet!(vote)
       return false if already_tweeted?(vote)
 
-      client.update(vote.to_tweet)
+      client.update(vote.to_tweet) if VoteTracker.env == 'production'
       record_tweet!(vote)
 
       true
