@@ -1,3 +1,4 @@
+require 'vote_tracker/configuration'
 require 'vote_tracker/senate'
 require 'vote_tracker/twitter'
 require 'vote_tracker/version'
@@ -6,4 +7,12 @@ require 'vote_tracker/vote'
 module VoteTracker
   CONGRESS = 114
   SESSION  = 1
+
+  def self.configuration
+    Configuration.instance
+  end
+
+  def self.configure
+    yield configuration
+  end
 end

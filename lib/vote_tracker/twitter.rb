@@ -8,10 +8,10 @@ module VoteTracker
 
     def client
       @client ||= ::Twitter::REST::Client.new do |config|
-        config.consumer_key        = 'v4O599qC2ROPZ9XyeDgZxUCpJ'
-        config.consumer_secret     = 'vpp4ioCTrQDuL9qo9PQWxWZzkwxRivcmMTwPh4zZuvO0jzcGvS'
-        config.access_token        = '4389538889-i4k2lhFtjPKW8wyMtKwmOWaJClR4BAXPzAiJ4JR'
-        config.access_token_secret = 'welz5AEkB6eNSJgbQ2Z7HhmjXUhLJgUJGga2qQOtdDy2t'
+        config.consumer_key        = configuration[:consumer_key]
+        config.consumer_secret     = configuration[:consumer_secret]
+        config.access_token        = configuration[:access_token]
+        config.access_token_secret = configuration[:access_token_secret]
       end
     end
 
@@ -31,6 +31,10 @@ module VoteTracker
 
       VoteTracker::CONGRESS < last_congress.to_i ||
         last_number.to_i >= vote.number.to_i
+    end
+
+    def configuration
+      VoteTracker.configuration.twitter
     end
 
     def record_tweet!(vote)
