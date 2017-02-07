@@ -5,8 +5,8 @@ require 'vote_tracker/version'
 require 'vote_tracker/vote'
 
 module VoteTracker
-  CONGRESS = 114
-  SESSION  = 2
+  CONGRESS = 115
+  SESSION  = 1
 
   class << self
     attr_reader :env
