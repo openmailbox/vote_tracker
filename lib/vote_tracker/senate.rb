@@ -3,7 +3,7 @@ require 'nokogiri'
 
 module VoteTracker
   class Senate
-    BASE_URL = 'http://www.senate.gov/legislative/LIS/roll_call_lists/'
+    BASE_URL = 'https://www.senate.gov/legislative/LIS/roll_call_lists/'
 
     def votes
       @votes ||= xml.css('vote').map do |node|
