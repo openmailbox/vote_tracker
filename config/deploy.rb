@@ -1,6 +1,8 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
+set :rvm_ruby_version, '2.3.3@vote_tracker'
+
 set :application, 'congress_tracker'
 set :repo_url, 'https://github.com/nevern02/vote_tracker.git'
 
