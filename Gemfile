@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'nokogiri'
 gem 'twitter'
 gem 'whenever', require: false
+gem 'rake'
 
 group :development do
   gem 'capistrano', '~> 3.4.0'
